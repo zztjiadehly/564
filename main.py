@@ -115,7 +115,7 @@ def get_ciba():
     return note_ch, note_en
  
  
-def send_message(to_user, access_token, region_name, weather, temp, wind_dir, note_ch, note_en,a,b):
+def send_message(to_user, access_token, region_name, weather, temp, wind_dir, note_ch, note_en,a,b,c,d):
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
     week_list = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     year = localtime().tm_year
@@ -168,11 +168,11 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             },
             "note_en": {
                 "value": note_en,
-                "color": colorSelf
+                "color": get_color()
             },
             "note_ch": {
                 "value": note_ch,
-                "color": colorSelf
+                "color": get_color()
             },
             "a": {
                 "value": a,
@@ -180,6 +180,14 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             },
             "b": {
                 "value": b,
+                "color": colorSelf
+            },
+            "c": {
+                "value": c,
+                "color": colorSelf
+            },
+            "d": {
+                "value": d,
                 "color": colorSelf
             }
          
@@ -236,10 +244,12 @@ if __name__ == "__main__":
     note_en = config["note_en"]
     a = config["a"]
     b = config["b"]
+    c = config["c"]
+    d = config["d"]
     if note_ch == "" and note_en == "":
         # 获取词霸每日金句
         note_ch, note_en = get_ciba()
     # 公众号推送消息
     for user in users:
-        send_message(user, accessToken, region, weather, temp, wind_dir, note_ch, note_en,a,b)
+        send_message(user, accessToken, region, weather, temp, wind_dir, note_ch, note_en,a,b,c,d)
     os.system("pause")
