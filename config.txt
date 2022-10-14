@@ -5,9 +5,9 @@
 # 公众号appSecret
 "app_secret": "3fc1e5d3c252c4da8e15ac1bb524a16b",
 # 天气模板 想推送拿个就把哪个前面的#去掉，把另外一个加上#好，不会打#号，就复制，一定只能选一个，如果都没#号，或者都有都会出错
-"template_id": "inSv02tosMGkZMey6Ae1qZVvAxb6dGhGGu4PPtEBTsQ",
+#"template_id": "inSv02tosMGkZMey6Ae1qZVvAxb6dGhGGu4PPtEBTsQ",
 #至妻书  这个改了之后在下面保存
-#"template_id": "8YIdtrLK_2440sUlvcSiIBanV_Z3xosZWqDgLtVix5E-ZSfojFA",
+"template_id": "8YIdtrLK_2440sUlvcSiIBanV_Z3xosZWqDgLtVix5E-ZSfojFA",
 # 接收公众号消息的微信号，如果有多个，需要在[]里用英文逗号间隔，例如["wx1", "wx2"]
 "user": ["odBn56QCz-x0sZJRWbRAR83GX1NI"],
  
